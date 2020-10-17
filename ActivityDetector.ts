@@ -1,7 +1,10 @@
 import Timer from './Timer';
 
+import { debounce } from './utils/debounce';
+
 import { 
   BROWSER_EVENTS, 
+  DEBOUNCE_DELAY,
   MOBILE_EVENTS, 
   Deactivate,
   Options, 
@@ -29,11 +32,11 @@ export class ActivityDetector {
     }
   }
 
-  private handleActivityEvent = () => {
+  private handleActivityEvent = debounce(() => {
     this.timers.forEach((timer: Timer) => {
       timer.setTimerState(State.Active);
     });
-  };
+  }, DEBOUNCE_DELAY);
 
   public subscribe(time: number, subcriber: Subscriber): Unsubscribe {
     const subscription = new Timer(time, subcriber);

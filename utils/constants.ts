@@ -1,5 +1,6 @@
-export const BROWSER_EVENTS = ['click', 'mouseenter', 'keydown'];
+export const BROWSER_EVENTS = ['click', 'mouseenter', 'keydown', 'mousemove'];
 export const MOBILE_EVENTS = ['touchstart'];
+export const DEBOUNCE_DELAY = 50;
 export type Deactivate = () => void;
 export type Unsubscribe = (completed?: () => void) => void;
 export type Subscriber = () => void;
