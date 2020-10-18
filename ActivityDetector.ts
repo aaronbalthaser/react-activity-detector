@@ -53,10 +53,10 @@ export class ActivityDetector {
   }
 
   public activate({ platform = '', events = [] }: Options = {}): Deactivate { 
-    this.events = [...BROWSER_EVENTS, ...MOBILE_EVENTS];
+    this.events = [...DESKTOP_EVENTS, ...MOBILE_EVENTS];
 
     if (platform === PLatform.Browser) {
-      this.events = [...BROWSER_EVENTS, ...events];
+      this.events = [...DESKTOP_EVENTS, ...events];
     }
 
     if (platform === PLatform.Mobile) {
