@@ -1,11 +1,9 @@
 import Timer from './Timer';
 
-import { debounce } from './utils/debounce';
+import { debounce, DESKTOP_EVENTS, MOBILE_EVENTS } from './utils';
 
 import { 
-  BROWSER_EVENTS, 
   DEBOUNCE_DELAY,
-  MOBILE_EVENTS, 
   Deactivate,
   Options, 
   PLatform, 
